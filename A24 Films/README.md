@@ -11,6 +11,15 @@ I enjoy watching movies. I started watching A24 films more recently such as Civi
 ### Data Set
 When I was starting this project, I found an old public [dataset](https://www.kaggle.com/datasets/sebastiansuliborski/a24-studio-movies-dataset) from Kraggle. However, it was a little outdated so I went ahead and manually added all the films and their details from 2023-2025. I also deleted some columns that I wasn't interested in analyzing before using it to write SQL queries. 
 
+Data Cleaning
+1. Removed duplicates by using the movie title column
+
+   
+Problems I had with the dataset
+1. A lot of missing information
+2. It should include genres to give a better analysis on what people tend to like more
+3. I deleted “Music by”, “Screenplay by”, and “Based on”, “Edited By”, “Cinematography” and “Written by”
+
 
 [My Updated Dataset](https://docs.google.com/spreadsheets/d/19XDTzVPtD-lCmuN4hJW1MTJ2pu0ymlAF54sYuPQ7vqo/edit?usp=sharing)
 
