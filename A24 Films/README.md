@@ -46,4 +46,39 @@ Answer:
 
 <img width="549" alt="Screenshot 2024-11-19 at 11 58 53 PM" src="https://github.com/user-attachments/assets/103cf613-bcbd-4a37-bc40-9c24416f6201">
 
+### Movies by Running Time
+
+```
+SELECT title, running_time
+FROM movies
+ORDER BY running_time DESC
+LIMIT 10;
+```
+Answer:
+
+<img width="393" alt="Screenshot 2024-11-20 at 12 02 44 AM" src="https://github.com/user-attachments/assets/79c05be8-ce81-463b-acc5-595a96a22119">
+
+
+### Movie Count by Rotten Tomatoes Rating
+
+```
+SELECT CASE 
+           WHEN rotten_tomatoes BETWEEN 0 AND 59 THEN '0-59'
+           WHEN rotten_tomatoes BETWEEN 60 AND 79 THEN '60-79'
+           WHEN rotten_tomatoes BETWEEN 80 AND 100 THEN '80-100'
+           ELSE 'No Rating'
+       END AS rating_range,
+       COUNT(title) AS movie_count
+FROM movies
+GROUP BY rating_range
+ORDER BY movie_count DESC;
+```
+
+Answer:
+
+<img width="237" alt="Screenshot 2024-11-20 at 12 02 22 AM" src="https://github.com/user-attachments/assets/ca0c7807-e407-4c5b-b4ff-c0d585dc766f">
+
+
+
+
 
