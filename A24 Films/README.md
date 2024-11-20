@@ -14,6 +14,12 @@ When I was starting this project, I found an old public [dataset](https://www.ka
 
 [My Updated Dataset](https://docs.google.com/spreadsheets/d/19XDTzVPtD-lCmuN4hJW1MTJ2pu0ymlAF54sYuPQ7vqo/edit?usp=sharing)
 
+### Tableau
+I also made a Tableau dashboard after writing the SQL queries to show some visualizations if you want to check that out.
+
+[Link to Tableau]
+
+
 ## SQL Queries + Answers
 
 ### What movies have the highest imdb ratings?
