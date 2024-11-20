@@ -1,4 +1,4 @@
-# A24 Films Analysis
+ # 🎞️  A24 Films Analysis
 
 I wanted to find a way to quickly explore, analyze, and gain insights about the filmography of A24 films such as ratings, directors, box office performance, and more
 
