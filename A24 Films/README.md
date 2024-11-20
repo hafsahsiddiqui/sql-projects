@@ -58,6 +58,23 @@ Answer:
 <img width="431" alt="Screenshot 2024-11-20 at 2 38 53 PM" src="https://github.com/user-attachments/assets/d65522a0-bd20-419f-9339-42e19cb4091a">
 
 
+### 3. Which movies had the biggest financial success relative to their budget?
+
+SELECT title, 
+       budget, 
+       box_office, 
+       (box_office - budget) AS profit,
+       ((box_office - budget) / budget) * 100 AS roi_percentage
+FROM movies
+WHERE budget IS NOT NULL AND box_office IS NOT NULL
+ORDER BY roi_percentage DESC
+LIMIT 10;
+
+Answer:
+
+<img width="561" alt="Screenshot 2024-11-20 at 2 43 53 PM" src="https://github.com/user-attachments/assets/96d6ec12-ddf6-4870-a6a2-b2f48821d672">
+
+
 ### 5. What movies have the highest imdb ratings?
 
 ```
@@ -67,7 +84,6 @@ WHERE imdb IS NOT NULL
 ORDER BY imdb DESC
 LIMIT 10;
 ```
-
 
 Answer: 
 
