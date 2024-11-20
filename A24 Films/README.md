@@ -13,3 +13,12 @@ When I was starting this project, I found an old public dataset from Kraggle. Ho
 1. Kraggle Dataset Link: 
 
 2. My updated dataset:
+
+## SQL Queries + Answers
+
+### What movies have the highest imdb ratings?
+
+Answer: 
+
+<img width="340" alt="Screenshot 2024-11-19 at 11 56 04 PM" src="https://github.com/user-attachments/assets/ac062397-46b9-48b2-b3f0-28fc628aea6e">
+
