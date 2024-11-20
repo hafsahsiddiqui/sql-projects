@@ -15,12 +15,32 @@ When I was starting this project, I found an old public [dataset](https://www.ka
 [My Updated Dataset](https://docs.google.com/spreadsheets/d/19XDTzVPtD-lCmuN4hJW1MTJ2pu0ymlAF54sYuPQ7vqo/edit?usp=sharing)
 
 ### Tableau
-I also made a Tableau dashboard after writing the SQL queries to show some the results using visuals if you want to check that out.
+I also made a Tableau dashboard after writing the SQL queries to showcase the results using visuals
 
 [Link to Tableau]
 
 
 ## SQL Queries + Answers
+
+### 1. How has the average box office revenue changed over the years?
+
+
+```
+SELECT strftime('%Y', release_date) AS year, 
+       AVG(box_office) AS avg_box_office
+FROM movies
+WHERE box_office IS NOT NULL
+GROUP BY year
+ORDER BY year DESC;
+```
+
+Answer:
+
+
+
+
+<img width="218" alt="Screenshot 2024-11-20 at 2 35 34 PM" src="https://github.com/user-attachments/assets/224eb70c-4cb6-48b1-a28d-603f33e0c3dc">
+
 
 ### What movies have the highest imdb ratings?
 
