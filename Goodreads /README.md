@@ -1,5 +1,6 @@
-# 📚 Goodreads Analysis
+# 📚 Books Tracker
 
+I tried making a SQL database inspired by **Goodreads** where users can search books, read and write reviews, rate books, creating reading lists, track progress, and more
 
 ## Background
 
