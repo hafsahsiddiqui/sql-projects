@@ -23,11 +23,6 @@ Problems I had with the dataset
 
 [My Updated Dataset](https://docs.google.com/spreadsheets/d/19XDTzVPtD-lCmuN4hJW1MTJ2pu0ymlAF54sYuPQ7vqo/edit?usp=sharing)
 
-### Tableau
-I also made a Tableau dashboard after writing the SQL queries to showcase the results using visuals
-
-[Link to Tableau]
-
 
 ## SQL Queries + Answers
 
@@ -147,5 +142,7 @@ Answer:
 
 
 
+## Tableau
+I also made a Tableau dashboard after writing the SQL queries to showcase the results using visuals
 
-
+[Link to Tableau]
