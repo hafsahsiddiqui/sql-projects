@@ -7,16 +7,7 @@ I tried making a SQL database inspired by **Goodreads** where users can search b
 ### Tools
 - MySQL
 
-### Data Set
-
-
-### Tableau
-I made a Tableau dashboard after writing the SQL queries to showcase the results using visuals
-
-[Link to Tableau]
-
-
-## SQL Queries 
+### Build a Data Set
 
 -- Users Table
 CREATE TABLE Users (
@@ -28,3 +19,6 @@ CREATE TABLE Users (
     Bio TEXT,
     ProfilePictureURL VARCHAR(255)
 );
+
+
+### Analysis with SQL Queries 
