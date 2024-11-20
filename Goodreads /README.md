@@ -5,8 +5,7 @@ I tried making a SQL database inspired by **Goodreads** where users can search b
 ## Background
 
 ### Tools
-- SQLite3
-- Kraggle
+- MySQL
 
 ### Data Set
 
@@ -17,4 +16,15 @@ I made a Tableau dashboard after writing the SQL queries to showcase the results
 [Link to Tableau]
 
 
-## SQL Queries + Answers
+## SQL Queries 
+
+-- Users Table
+CREATE TABLE Users (
+    UserID INT PRIMARY KEY AUTO_INCREMENT,
+    Username VARCHAR(50) NOT NULL UNIQUE,
+    MyEmail VARCHAR(100) NOT NULL UNIQUE,
+    MyPassword VARCHAR(255) NOT NULL,
+    DateJoined TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    Bio TEXT,
+    ProfilePictureURL VARCHAR(255)
+);
