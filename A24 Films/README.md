@@ -18,11 +18,29 @@ When I was starting this project, I found an old public dataset from Kraggle. Ho
 
 ### What movies have the highest imdb ratings?
 
+```
+SELECT title, imdb
+FROM movies
+WHERE imdb IS NOT NULL
+ORDER BY imdb DESC
+LIMIT 10;
+```
+
+
 Answer: 
 
 <img width="340" alt="Screenshot 2024-11-19 at 11 56 04 PM" src="https://github.com/user-attachments/assets/ac062397-46b9-48b2-b3f0-28fc628aea6e">
 
 ### Box Office vs. Budget Comparison
+
+```
+SELECT title, budget, box_office, 
+       (box_office - budget) AS profit
+FROM movies
+WHERE box_office IS NOT NULL AND budget IS NOT NULL
+ORDER BY profit DESC
+LIMIT 10;
+```
 
 Answer:
 
