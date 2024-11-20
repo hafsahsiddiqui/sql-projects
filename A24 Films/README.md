@@ -4,7 +4,7 @@ I wanted to find a way to quickly explore, analyze, and gain insights about the 
 
 ## Background
 
-### Tools:
+### Tools
 - SQLite3
 - Kraggle
 
