@@ -1,6 +1,6 @@
 # 🎞️  A24 Films Analysis
 
-I wanted to find a way to quickly explore, analyze, and gain insights about the filmography of A24 films such as ratings, directors, box office performance, and more
+I enjoy watching movies. I started watching A24 films more recently such as Civil War, Hereditary, and Dream Scenario and wanted to know more about how A24 is doing. Therefore, I decided to use a dataset that allows me to quickly explore, analyze, and gain insights about the filmography of A24 films such as ratings, directors, box office performance, and more using SQL.
 
 ## Background
 
