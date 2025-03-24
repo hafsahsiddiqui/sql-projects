@@ -8,6 +8,7 @@ I tried making a SQL database inspired by **Goodreads** where users can search b
 - MySQL
 
 Unique Features to Improve Upon Goodreads:
+
 Personalized Recommendations – Use AI-based suggestions based on reading habits.
 
 Book Clubs & Discussion Rooms – Users can create/join clubs with real-time discussions.
