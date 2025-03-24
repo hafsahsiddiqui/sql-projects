@@ -7,6 +7,22 @@ I tried making a SQL database inspired by **Goodreads** where users can search b
 ### Tools
 - MySQL
 
+Unique Features to Improve Upon Goodreads:
+Personalized Recommendations – Use AI-based suggestions based on reading habits.
+
+Book Clubs & Discussion Rooms – Users can create/join clubs with real-time discussions.
+
+Custom Tags & Categories – Let users tag books for better organization.
+
+Enhanced Progress Tracking – Users can track time spent reading, notes per chapter, and mood tracking.
+
+Challenges & Achievements – Gamify reading with badges, streaks, and challenges.
+
+Audiobook Integration – Allow users to track progress for audiobooks.
+
+Book Trades & Borrowing – Connect readers for book swaps and lending.
+
+
 ### Build a Data Set
 
 Users table
