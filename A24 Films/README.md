@@ -140,6 +140,15 @@ Answer:
 
 <img width="237" alt="Screenshot 2024-11-20 at 12 02 22 AM" src="https://github.com/user-attachments/assets/ca0c7807-e407-4c5b-b4ff-c0d585dc766f">
 
+### Avg Box Office Based on Director(s)
+
+```
+
+```
+
+Answer:
+
+<img width="431" alt="Screenshot 2024-11-20 at 2 38 53 PM" src="https://github.com/user-attachments/assets/705374e3-84e7-45ec-a7c2-08bbc433dd63" />
 
 
 ## Tableau
