@@ -150,6 +150,25 @@ Answer:
 
 <img width="431" alt="Screenshot 2024-11-20 at 2 38 53 PM" src="https://github.com/user-attachments/assets/705374e3-84e7-45ec-a7c2-08bbc433dd63" />
 
+### Avg Box Office Based on Year
+
+```
+
+```
+
+Answer:
+
+<img width="218" alt="Screenshot 2024-11-20 at 2 35 34 PM" src="https://github.com/user-attachments/assets/53d93d15-989d-44ed-80a4-a1ebd069a586" />
+
+### Avg Box Office Based on Year
+
+```
+
+```
+
+Answer:
+
+<img width="561" alt="Screenshot 2024-11-20 at 2 43 53 PM" src="https://github.com/user-attachments/assets/6443a649-d745-45ba-9e29-198b783707b6" />
 
 ## Tableau
 I also made a Tableau dashboard after writing the SQL queries to showcase the results using visuals
