@@ -1,27 +1,19 @@
 # 🎞️  A24 Films Analysis
 
-I enjoy watching movies. I started watching A24 films more recently such as Civil War, Hereditary, and Dream Scenario and wanted to know more about how A24 is doing. Therefore, I decided to use a dataset that allows me to quickly explore, analyze, and gain insights about the filmography of A24 films such as ratings, directors, box office performance, and more using SQL.
+I enjoy watching movies. I started watching A24 films more recently after downloading Letterboxd and wanted to know more about how A24 is doing. Therefore, I decided to use a dataset that allows me to quickly explore, analyze, and gain insights about the filmography of A24 films such as ratings, directors, box office performance, and more using Excel, SQL, and Tableau.
 
 ## Background
 
-### Tools
-- SQLite3
-- Kraggle
+When I began this project, I discovered a public [dataset](https://www.kaggle.com/datasets/sebastiansuliborski/a24-studio-movies-dataset) on A24 films on Kaggle. While it served as a helpful foundation, it was outdated. To improve the accuracy and depth of my analysis, I manually updated the dataset by adding all A24 film releases from 2023 to 2025, including key details such as release dates, directors, genres, and box office figures. Additionally, I performed data cleaning by removing duplicates, standardizing formats, and dropping irrelevant or inconsistent columns to ensure a cleaner, more analysis-ready dataset.
 
-### Data Set
-When I was starting this project, I found an old public [dataset](https://www.kaggle.com/datasets/sebastiansuliborski/a24-studio-movies-dataset) from Kraggle. However, it was a little outdated so I went ahead and manually added all the films and their details from 2023-2025. I also deleted some columns that I wasn't interested in analyzing before using it to write SQL queries. 
+**Key Data Cleaning and Prep:**
+1. Removed duplicates based on the movie_title column to ensure data integrity
+3. I added 2023-2025 missing films and data, including release date, directors, box office data, and more
+4. It should include genres to give a better analysis on what people tend to like more
+5. I deleted columns that I didn't need such as “Music by”, “Screenplay by”, “Based on”, “Edited By”, “Cinematography” and “Written by”
+6. Standardized column formats and corrected inconsistencies (e.g., spacing, casing, null values)
 
-Data Cleaning
-1. Removed duplicates by using the movie title column
-
-   
-Problems I had with the dataset
-1. A lot of missing information
-2. It should include genres to give a better analysis on what people tend to like more
-3. I deleted “Music by”, “Screenplay by”, and “Based on”, “Edited By”, “Cinematography” and “Written by”
-
-
-[My Updated Dataset](https://docs.google.com/spreadsheets/d/19XDTzVPtD-lCmuN4hJW1MTJ2pu0ymlAF54sYuPQ7vqo/edit?usp=sharing)
+[View Updated Dataset](https://docs.google.com/spreadsheets/d/19XDTzVPtD-lCmuN4hJW1MTJ2pu0ymlAF54sYuPQ7vqo/edit?usp=sharing)
 
 
 ## SQL Queries + Answers
