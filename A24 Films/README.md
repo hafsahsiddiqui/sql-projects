@@ -276,6 +276,8 @@ I also made a Tableau dashboard after writing the SQL queries to showcase the re
 3. Star-attached films show a modest but consistent uplift in performance.
 4. The audience-critic gap can be predictive of cult status or streaming longevity.
 5. There’s a clear upward trend in A24’s critical reception and box office over time (pre-pandemic).
+6. Drama dominates — Over 80 titles fall into this category, but Horror and Coming-of-Age show the highest ROI swings.
+7. A24’s sweet spot: High creative risk, low financial risk (Moonlight, The Witch, Lady Bird).
 
 ## Reflection
 What you'd do differently, or next steps (e.g., predictive modeling, sentiment analysis).
