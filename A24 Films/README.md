@@ -16,6 +16,20 @@ When I began this project, I discovered a public [dataset](https://www.kaggle.co
 
 [View Updated Dataset](https://docs.google.com/spreadsheets/d/19XDTzVPtD-lCmuN4hJW1MTJ2pu0ymlAF54sYuPQ7vqo/edit?usp=sharing)
 
+Goal:
+To analyze the performance and creative patterns of films produced or distributed by A24 using SQL and Tableau. The project focuses on identifying financial drivers, artistic trends, and strategic insights that inform A24's success as a boutique film studio.
+
+Dataset:
+Custom dataset of A24 films with the following columns:
+title, running_time, directed_by, genres, original_or_adaptation, target_age_group, budget, box_office, roi, year, RTC, RTA, audience_critics_gap, metacritic, IMDb, setting, star_attached, director_experience.
+
+Tools Used:
+
+SQL (SQLite/PostgreSQL/MySQL) for data cleaning and analysis
+
+Tableau for interactive visualization
+
+(Optional) Python or Excel for extended analysis
 
 ## SQL Queries + Answers
 
@@ -254,3 +268,14 @@ ORDER BY roi ASC;
 I also made a Tableau dashboard after writing the SQL queries to showcase the results using visuals
 
 [Link to Tableau]
+
+
+## Key Takeaways
+1. A24's highest ROI films tend to be original, low-budget, and genre-specific (especially horror and psychological thrillers).
+2. Directors with prior experience generally produce higher box office returns.
+3. Star-attached films show a modest but consistent uplift in performance.
+4. The audience-critic gap can be predictive of cult status or streaming longevity.
+5. There’s a clear upward trend in A24’s critical reception and box office over time (pre-pandemic).
+
+## Reflection
+What you'd do differently, or next steps (e.g., predictive modeling, sentiment analysis).
