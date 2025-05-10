@@ -53,6 +53,22 @@ SELECT director_experience, AVG(roi) AS avg_roi, AVG(IMDb) AS avg_imdb, COUNT(*)
 FROM a24_movies
 GROUP BY director_experience;
 ```
+
+c. Which directors have the highest average box office earnings?
+
+```
+SELECT directed_by, 
+       AVG(box_office) AS avg_box_office
+FROM movies
+WHERE box_office IS NOT NULL
+GROUP BY directed_by
+ORDER BY avg_box_office DESC
+LIMIT 10;
+```
+Answer:
+
+<img width="431" alt="Screenshot 2024-11-20 at 2 38 53 PM" src="https://github.com/user-attachments/assets/d65522a0-bd20-419f-9339-42e19cb4091a">
+
 ### 🎭 3. Genre & Story Type
 
 a. IMDb by Genre
@@ -144,26 +160,7 @@ ORDER BY year DESC;
 
 Answer:
 
-
-
-
 <img width="218" alt="Screenshot 2024-11-20 at 2 35 34 PM" src="https://github.com/user-attachments/assets/224eb70c-4cb6-48b1-a28d-603f33e0c3dc">
-
-
-### 2. Which directors have the highest average box office earnings?
-
-```
-SELECT directed_by, 
-       AVG(box_office) AS avg_box_office
-FROM movies
-WHERE box_office IS NOT NULL
-GROUP BY directed_by
-ORDER BY avg_box_office DESC
-LIMIT 10;
-```
-Answer:
-
-<img width="431" alt="Screenshot 2024-11-20 at 2 38 53 PM" src="https://github.com/user-attachments/assets/d65522a0-bd20-419f-9339-42e19cb4091a">
 
 
 ### 3. Which movies had the biggest financial success relative to their budget?
