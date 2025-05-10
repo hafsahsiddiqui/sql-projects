@@ -19,7 +19,57 @@ When I began this project, I discovered a public [dataset](https://www.kaggle.co
 
 ## SQL Queries + Answers
 
-### 1. How has the average box office revenue changed over the years?
+### 💵 1. Financial Analysis
+
+a. ROI vs Budget
+
+```
+SELECT budget, roi, title
+FROM a24_movies
+ORDER BY roi DESC;
+```
+
+b. Box Office vs Budget
+
+```
+SELECT budget, box_office, roi, title
+FROM a24_movies
+ORDER BY box_office DESC;
+```
+
+### ⭐ 2. Star & Director Impact
+
+a. Average ROI for Star-Attached vs Not
+
+```
+SELECT star_attached, AVG(roi) AS avg_roi, COUNT(*) AS film_count
+FROM a24_movies
+GROUP BY star_attached;
+```
+b. Performance by Director Experience
+
+```
+SELECT director_experience, AVG(roi) AS avg_roi, AVG(IMDb) AS avg_imdb, COUNT(*) AS film_count
+FROM a24_movies
+GROUP BY director_experience;
+```
+### 🎭 3. Genre & Story Type
+
+a. IMDb by Genre
+```
+SELECT genres, AVG(IMDb) AS avg_imdb, COUNT(*) AS count
+FROM a24_movies
+GROUP BY genres
+ORDER BY avg_imdb DESC;
+```
+b. ROI: Original vs Adaptation
+```
+SELECT original_or_adaptation, AVG(roi) AS avg_roi, COUNT(*) AS count
+FROM a24_movies
+GROUP BY original_or_adaptation;
+```
+
+## 1 How has the average box office revenue changed over the years?
 
 
 ```
