@@ -69,9 +69,70 @@ FROM a24_movies
 GROUP BY original_or_adaptation;
 ```
 
+### 🧠 4. Audience vs Critics
+a. Top Films by Critics-Audience Gap
+```
+SELECT title, audience_critics_gap, RTC, RTA
+FROM a24_movies
+ORDER BY ABS(audience_critics_gap) DESC
+LIMIT 10;
+```
+b. Correlation Proxy: Critics vs ROI
+(Note: This won’t calculate correlation in SQL, but shows comparison)
+
+```
+SELECT title, RTC, RTA, metacritic, roi
+FROM a24_movies
+ORDER BY roi DESC;
+```
+
+### 🗓️ 5. Temporal Trends
+a. Movies per Year
+```
+SELECT year, COUNT(*) AS films_released
+FROM a24_movies
+GROUP BY year
+ORDER BY year;
+```
+b. Average ROI per Year
+```
+SELECT year, AVG(roi) AS avg_roi
+FROM a24_movies
+GROUP BY year
+ORDER BY year;
+```
+
+### 🌍 6. Genre and Setting Trends
+
+a. Film Count by Genre and Setting
+```
+SELECT genres, setting, COUNT(*) AS count
+FROM a24_movies
+GROUP BY genres, setting
+ORDER BY count DESC;
+```
+
+### 🧩 7. Simulated Cluster Segments (Proxy)
+To simulate segmentation manually, you could try:
+
+a. High Budget, High ROI
+```
+SELECT title, budget, roi, genres
+FROM a24_movies
+WHERE budget > 5000000 AND roi > 3
+ORDER BY roi DESC;
+```
+
+b. Low Budget, Low ROI
+
+```
+SELECT title, budget, roi, genres
+FROM a24_movies
+WHERE budget < 1000000 AND roi < 1
+ORDER BY roi ASC;
+```
+
 ## 1 How has the average box office revenue changed over the years?
-
-
 ```
 SELECT strftime('%Y', release_date) AS year, 
        AVG(box_office) AS avg_box_office
