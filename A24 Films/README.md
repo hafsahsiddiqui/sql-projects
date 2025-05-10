@@ -8,10 +8,11 @@ When I began this project, I discovered a public [dataset](https://www.kaggle.co
 
 **Key Data Cleaning and Prep:**
 1. Removed duplicates based on the movie_title column to ensure data integrity
-3. I added 2023-2025 missing films and data, including release date, directors, box office data, and more
-4. It should include genres to give a better analysis on what people tend to like more
-5. I deleted columns that I didn't need such as “Music by”, “Screenplay by”, “Based on”, “Edited By”, “Cinematography” and “Written by”
-6. Standardized column formats and corrected inconsistencies (e.g., spacing, casing, null values)
+2. I manually added 2023-2025 missing films and data, including release date, directors, box office data, and more
+3. I included columns such as genres, original_or_adaptation, setting, and more to give a better analysis on what people tend to like more
+4. I deleted columns that I didn't need such as “Music by”, “Screenplay by”, “Based on”, “Edited By”, “Cinematography” and “Written by”
+5. Standardized column formats and corrected inconsistencies (e.g., spacing, casing, null values)
+6. I made sure all the columns I added are written SQL friendly 
 
 [View Updated Dataset](https://docs.google.com/spreadsheets/d/19XDTzVPtD-lCmuN4hJW1MTJ2pu0ymlAF54sYuPQ7vqo/edit?usp=sharing)
 
