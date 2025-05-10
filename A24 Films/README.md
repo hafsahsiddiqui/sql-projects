@@ -1,6 +1,15 @@
 # 🎞️  A24 Films Analysis
 
-I enjoy watching movies. I started watching A24 films more recently after downloading Letterboxd and wanted to know more about how A24 is doing. Therefore, I decided to use a dataset that allows me to quickly explore, analyze, and gain insights about the filmography of A24 films such as ratings, directors, box office performance, and more using Excel, SQL, and Tableau.
+## Project Overview
+
+I enjoy watching movies. I started watching A24 films more recently after downloading Letterboxd and wanted to know more about how A24 is doing. Therefore, I decided to use a dataset that allows me to quickly explore, analyze, and gain insights about the various aspects of the A24 films to better understand studio's strategies. 
+
+**Goal:** To explore the performance, trends, and key success factors behind A24 films by analyzing their financial returns, critical reception, and production patterns using SQL, Microsoft Excel, and Tableau.
+
+**Tools Used:**
+1. SQL (SQLite/PostgreSQL/MySQL) for querying and analysis
+2. Microsoft Excel for data cleaning and extended analysis
+3. Tableau for visualization
 
 ## Background
 
@@ -9,27 +18,12 @@ When I began this project, I discovered a public [dataset](https://www.kaggle.co
 **Key Data Cleaning and Prep:**
 1. Removed duplicates based on the movie_title column to ensure data integrity
 2. I manually added 2023-2025 missing films and data, including release date, directors, box office data, and more
-3. I included columns such as genres, original_or_adaptation, setting, and more to give a better analysis on what people tend to like more
+3. I included columns such as title, running_time, directed_by, genres, original_or_adaptation, target_age_group, budget, box_office, roi, year, RTC, RTA, audience_critics_gap, metacritic, IMDb, setting, star_attached, director_experience, and more to give a better analysis on what people tend to like more
 4. I deleted columns that I didn't need such as “Music by”, “Screenplay by”, “Based on”, “Edited By”, “Cinematography” and “Written by”
 5. Standardized column formats and corrected inconsistencies (e.g., spacing, casing, null values)
 6. I made sure all the columns I added are written SQL friendly 
 
 [View Updated Dataset](https://docs.google.com/spreadsheets/d/19XDTzVPtD-lCmuN4hJW1MTJ2pu0ymlAF54sYuPQ7vqo/edit?usp=sharing)
-
-Goal:
-To analyze the performance and creative patterns of films produced or distributed by A24 using SQL and Tableau. The project focuses on identifying financial drivers, artistic trends, and strategic insights that inform A24's success as a boutique film studio.
-
-Dataset:
-Custom dataset of A24 films with the following columns:
-title, running_time, directed_by, genres, original_or_adaptation, target_age_group, budget, box_office, roi, year, RTC, RTA, audience_critics_gap, metacritic, IMDb, setting, star_attached, director_experience.
-
-Tools Used:
-
-SQL (SQLite/PostgreSQL/MySQL) for data cleaning and analysis
-
-Tableau for interactive visualization
-
-(Optional) Python or Excel for extended analysis
 
 ## SQL Queries + Answers
 
