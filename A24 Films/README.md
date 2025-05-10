@@ -37,6 +37,46 @@ FROM a24_movies
 ORDER BY box_office DESC;
 ```
 
+c. Box Office vs. Budget Comparison
+
+```
+SELECT title, budget, box_office, 
+       (box_office - budget) AS profit
+FROM movies
+WHERE box_office IS NOT NULL AND budget IS NOT NULL
+ORDER BY profit DESC
+LIMIT 10;
+```
+
+Answer:
+
+<img width="549" alt="Screenshot 2024-11-19 at 11 58 53 PM" src="https://github.com/user-attachments/assets/103cf613-bcbd-4a37-bc40-9c24416f6201">
+
+d. Which movies had the biggest financial success relative to their budget?
+
+SELECT title, 
+       budget, 
+       box_office, 
+       (box_office - budget) AS profit,
+       ((box_office - budget) / budget) * 100 AS roi_percentage
+FROM movies
+WHERE budget IS NOT NULL AND box_office IS NOT NULL
+ORDER BY roi_percentage DESC
+LIMIT 10;
+
+Answer:
+
+<img width="561" alt="Screenshot 2024-11-20 at 2 43 53 PM" src="https://github.com/user-attachments/assets/96d6ec12-ddf6-4870-a6a2-b2f48821d672">
+
+
+
+### Avg Box Office Based on Year
+
+Answer:
+
+<img width="561" alt="Screenshot 2024-11-20 at 2 43 53 PM" src="https://github.com/user-attachments/assets/6443a649-d745-45ba-9e29-198b783707b6" />
+
+
 ### ⭐ 2. Star & Director Impact
 
 a. Average ROI for Star-Attached vs Not
@@ -69,6 +109,9 @@ Answer:
 
 <img width="431" alt="Screenshot 2024-11-20 at 2 38 53 PM" src="https://github.com/user-attachments/assets/d65522a0-bd20-419f-9339-42e19cb4091a">
 
+<img width="431" alt="Screenshot 2024-11-20 at 2 38 53 PM" src="https://github.com/user-attachments/assets/705374e3-84e7-45ec-a7c2-08bbc433dd63" />
+
+
 ### 🎭 3. Genre & Story Type
 
 a. IMDb by Genre
@@ -84,6 +127,18 @@ SELECT original_or_adaptation, AVG(roi) AS avg_roi, COUNT(*) AS count
 FROM a24_movies
 GROUP BY original_or_adaptation;
 ```
+
+ c. Movies by Running Time
+
+```
+SELECT title, running_time
+FROM movies
+ORDER BY running_time DESC
+LIMIT 10;
+```
+Answer:
+
+<img width="393" alt="Screenshot 2024-11-20 at 12 02 44 AM" src="https://github.com/user-attachments/assets/79c05be8-ce81-463b-acc5-595a96a22119">
 
 ### 🧠 4. Audience vs Critics
 a. Top Films by Critics-Audience Gap
@@ -101,6 +156,38 @@ SELECT title, RTC, RTA, metacritic, roi
 FROM a24_movies
 ORDER BY roi DESC;
 ```
+c. What movies have the highest imdb ratings?
+
+```
+SELECT title, imdb
+FROM movies
+WHERE imdb IS NOT NULL
+ORDER BY imdb DESC
+LIMIT 10;
+```
+
+Answer: 
+
+<img width="340" alt="Screenshot 2024-11-19 at 11 56 04 PM" src="https://github.com/user-attachments/assets/ac062397-46b9-48b2-b3f0-28fc628aea6e">
+
+### Movie Count by Rotten Tomatoes Rating
+
+```
+SELECT CASE 
+           WHEN rotten_tomatoes BETWEEN 0 AND 59 THEN '0-59'
+           WHEN rotten_tomatoes BETWEEN 60 AND 79 THEN '60-79'
+           WHEN rotten_tomatoes BETWEEN 80 AND 100 THEN '80-100'
+           ELSE 'No Rating'
+       END AS rating_range,
+       COUNT(title) AS movie_count
+FROM movies
+GROUP BY rating_range
+ORDER BY movie_count DESC;
+```
+
+Answer:
+
+<img width="237" alt="Screenshot 2024-11-20 at 12 02 22 AM" src="https://github.com/user-attachments/assets/ca0c7807-e407-4c5b-b4ff-c0d585dc766f">
 
 ### 🗓️ 5. Temporal Trends
 a. Movies per Year
@@ -117,6 +204,20 @@ FROM a24_movies
 GROUP BY year
 ORDER BY year;
 ```
+
+c. How has the average box office revenue changed over the years?
+```
+SELECT strftime('%Y', release_date) AS year, 
+       AVG(box_office) AS avg_box_office
+FROM movies
+WHERE box_office IS NOT NULL
+GROUP BY year
+ORDER BY year DESC;
+```
+
+Answer:
+
+<img width="218" alt="Screenshot 2024-11-20 at 2 35 34 PM" src="https://github.com/user-attachments/assets/224eb70c-4cb6-48b1-a28d-603f33e0c3dc">
 
 ### 🌍 6. Genre and Setting Trends
 
@@ -148,128 +249,6 @@ WHERE budget < 1000000 AND roi < 1
 ORDER BY roi ASC;
 ```
 
-## 1 How has the average box office revenue changed over the years?
-```
-SELECT strftime('%Y', release_date) AS year, 
-       AVG(box_office) AS avg_box_office
-FROM movies
-WHERE box_office IS NOT NULL
-GROUP BY year
-ORDER BY year DESC;
-```
-
-Answer:
-
-<img width="218" alt="Screenshot 2024-11-20 at 2 35 34 PM" src="https://github.com/user-attachments/assets/224eb70c-4cb6-48b1-a28d-603f33e0c3dc">
-
-
-### 3. Which movies had the biggest financial success relative to their budget?
-
-SELECT title, 
-       budget, 
-       box_office, 
-       (box_office - budget) AS profit,
-       ((box_office - budget) / budget) * 100 AS roi_percentage
-FROM movies
-WHERE budget IS NOT NULL AND box_office IS NOT NULL
-ORDER BY roi_percentage DESC
-LIMIT 10;
-
-Answer:
-
-<img width="561" alt="Screenshot 2024-11-20 at 2 43 53 PM" src="https://github.com/user-attachments/assets/96d6ec12-ddf6-4870-a6a2-b2f48821d672">
-
-
-### 5. What movies have the highest imdb ratings?
-
-```
-SELECT title, imdb
-FROM movies
-WHERE imdb IS NOT NULL
-ORDER BY imdb DESC
-LIMIT 10;
-```
-
-Answer: 
-
-<img width="340" alt="Screenshot 2024-11-19 at 11 56 04 PM" src="https://github.com/user-attachments/assets/ac062397-46b9-48b2-b3f0-28fc628aea6e">
-
-### Box Office vs. Budget Comparison
-
-```
-SELECT title, budget, box_office, 
-       (box_office - budget) AS profit
-FROM movies
-WHERE box_office IS NOT NULL AND budget IS NOT NULL
-ORDER BY profit DESC
-LIMIT 10;
-```
-
-Answer:
-
-<img width="549" alt="Screenshot 2024-11-19 at 11 58 53 PM" src="https://github.com/user-attachments/assets/103cf613-bcbd-4a37-bc40-9c24416f6201">
-
-### Movies by Running Time
-
-```
-SELECT title, running_time
-FROM movies
-ORDER BY running_time DESC
-LIMIT 10;
-```
-Answer:
-
-<img width="393" alt="Screenshot 2024-11-20 at 12 02 44 AM" src="https://github.com/user-attachments/assets/79c05be8-ce81-463b-acc5-595a96a22119">
-
-
-### Movie Count by Rotten Tomatoes Rating
-
-```
-SELECT CASE 
-           WHEN rotten_tomatoes BETWEEN 0 AND 59 THEN '0-59'
-           WHEN rotten_tomatoes BETWEEN 60 AND 79 THEN '60-79'
-           WHEN rotten_tomatoes BETWEEN 80 AND 100 THEN '80-100'
-           ELSE 'No Rating'
-       END AS rating_range,
-       COUNT(title) AS movie_count
-FROM movies
-GROUP BY rating_range
-ORDER BY movie_count DESC;
-```
-
-Answer:
-
-<img width="237" alt="Screenshot 2024-11-20 at 12 02 22 AM" src="https://github.com/user-attachments/assets/ca0c7807-e407-4c5b-b4ff-c0d585dc766f">
-
-### Avg Box Office Based on Director(s)
-
-```
-
-```
-
-Answer:
-
-<img width="431" alt="Screenshot 2024-11-20 at 2 38 53 PM" src="https://github.com/user-attachments/assets/705374e3-84e7-45ec-a7c2-08bbc433dd63" />
-
-### Avg Box Office Based on Year
-
-```
-
-```
-
-Answer:
-
-<img width="218" alt="Screenshot 2024-11-20 at 2 35 34 PM" src="https://github.com/user-attachments/assets/53d93d15-989d-44ed-80a4-a1ebd069a586" />
-
-### Avg Box Office Based on Year
-
-```
-
-```
-
-Answer:
-
-<img width="561" alt="Screenshot 2024-11-20 at 2 43 53 PM" src="https://github.com/user-attachments/assets/6443a649-d745-45ba-9e29-198b783707b6" />
 
 ## Tableau
 I also made a Tableau dashboard after writing the SQL queries to showcase the results using visuals
