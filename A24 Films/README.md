@@ -29,60 +29,24 @@ When I began this project, I discovered a public [dataset](https://www.kaggle.co
 
 ### 💵 1. Financial Analysis
 
-a. ROI vs Budget
+a. Which movies had the biggest financial success relative to their budget?
 
 ```
-SELECT budget, roi, title
+SELECT title, budget, box_office, roi * 100 AS roi_percentage
 FROM a24_movies
-ORDER BY roi DESC;
-```
-
-b. Box Office vs Budget
-
-```
-SELECT budget, box_office, roi, title
-FROM a24_movies
-ORDER BY box_office DESC;
-```
-
-c. Box Office vs. Budget Comparison
-
-```
-SELECT title, budget, box_office, 
-       (box_office - budget) AS profit
-FROM movies
-WHERE box_office IS NOT NULL AND budget IS NOT NULL
-ORDER BY profit DESC
-LIMIT 10;
-```
-
-Answer:
-
-<img width="549" alt="Screenshot 2024-11-19 at 11 58 53 PM" src="https://github.com/user-attachments/assets/103cf613-bcbd-4a37-bc40-9c24416f6201">
-
-d. Which movies had the biggest financial success relative to their budget?
-
-SELECT title, 
-       budget, 
-       box_office, 
-       (box_office - budget) AS profit,
-       ((box_office - budget) / budget) * 100 AS roi_percentage
-FROM movies
-WHERE budget IS NOT NULL AND box_office IS NOT NULL
 ORDER BY roi_percentage DESC
 LIMIT 10;
+```
 
 Answer:
 
-<img width="561" alt="Screenshot 2024-11-20 at 2 43 53 PM" src="https://github.com/user-attachments/assets/96d6ec12-ddf6-4870-a6a2-b2f48821d672">
+b. Avg Box Office Based on Year
 
+```
 
-
-### Avg Box Office Based on Year
+```
 
 Answer:
-
-<img width="561" alt="Screenshot 2024-11-20 at 2 43 53 PM" src="https://github.com/user-attachments/assets/6443a649-d745-45ba-9e29-198b783707b6" />
 
 
 ### ⭐ 2. Star & Director Impact
@@ -94,6 +58,7 @@ SELECT star_attached, AVG(roi) AS avg_roi, COUNT(*) AS film_count
 FROM a24_movies
 GROUP BY star_attached;
 ```
+
 b. Performance by Director Experience
 
 ```
@@ -114,10 +79,6 @@ ORDER BY avg_box_office DESC
 LIMIT 10;
 ```
 Answer:
-
-<img width="431" alt="Screenshot 2024-11-20 at 2 38 53 PM" src="https://github.com/user-attachments/assets/d65522a0-bd20-419f-9339-42e19cb4091a">
-
-<img width="431" alt="Screenshot 2024-11-20 at 2 38 53 PM" src="https://github.com/user-attachments/assets/705374e3-84e7-45ec-a7c2-08bbc433dd63" />
 
 
 ### 🎭 3. Genre & Story Type
@@ -274,4 +235,9 @@ I also made a Tableau dashboard after writing the SQL queries to showcase the re
 7. A24’s sweet spot: High creative risk, low financial risk (Moonlight, The Witch, Lady Bird).
 
 ## Reflection
+
 What you'd do differently, or next steps (e.g., predictive modeling, sentiment analysis).
+
+What are some problems I faced:
+1. **Calculating Profit**: It was hard to calculate the profit because there are multiple things to consider such as production budget, marketing and distribution costs, theaters' share of box office revenue, internaional vs domestic revenue, and more.
+
