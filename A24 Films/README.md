@@ -27,7 +27,7 @@ When I began this project, I discovered a public [dataset](https://www.kaggle.co
 
 ## SQL Queries + Answers
 
-### 💵 1. Financial Analysis
+### 💵 1. Box Office Analysis
 
 a. Which movies had the biggest financial success relative to their budget?
 
@@ -130,7 +130,7 @@ ORDER BY count DESC;
 ```
 Answer: This query groups films by both genre and setting, providing a count of how many films fall into each combination. This gives insight into which genre-settings are most popular or common, helping to identify trends in thematic and environmental choices for A24 films.
 
-### 🧠 4. Audience vs Critics
+### 🧠 4. Critical Reception 
 a. Top Films by Critics-Audience Gap
 ```
 SELECT title, audience_critics_gap, RTC, RTA
@@ -183,7 +183,7 @@ ORDER BY movie_count DESC;
 Answer:
 
 
-### 🗓️ 5. Temporal Trends
+### 🗓️ 5. Long-Term Trends
 
 a. Movies per Year
 ```
@@ -213,8 +213,6 @@ ORDER BY year DESC;
 Answer:
 
 
-
-### 🧩 7. Simulated Cluster Segments (Proxy)
 To simulate segmentation manually, you could try:
 
 a. High Budget, High ROI
@@ -225,7 +223,6 @@ WHERE budget > 5000000 AND roi > 3
 ORDER BY roi DESC;
 ```
 Answer: This query identifies movies that are both high-budget and have high ROI. It helps isolate successful movies that had a significant financial investment and performed exceptionally well, allowing you to explore the characteristics of films that achieve large financial returns.
-
 
 
 b. Low Budget, Low ROI
