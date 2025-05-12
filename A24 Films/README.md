@@ -18,7 +18,7 @@ When I began this project, I discovered a public [dataset](https://www.kaggle.co
 **Key Data Cleaning and Prep:**
 1. Removed duplicates based on the movie_title column to ensure data integrity
 2. I manually added 2023-2025 missing films and data, including release date, directors, box office data, and more
-3. I included columns such as title, running_time, directed_by, genres, original_or_adaptation, target_age_group, budget, box_office, roi, year, RTC, RTA, audience_critics_gap, metacritic, IMDb, setting, star_attached, director_experience, and more to give a better analysis on what people tend to like more
+3. I added some columns so the dataset is now title, running_time, directed_by, genres, original_or_adaptation, target_age_group, budget, box_office, roi, year, RTC, RTA, audience_critics_gap, metacritic, IMDb, setting, star_attached, director_experience, and more to give a better analysis on what people tend to like more
 4. I deleted columns that I didn't need such as “Music by”, “Screenplay by”, “Based on”, “Edited By”, “Cinematography” and “Written by”
 5. Standardized column formats and corrected inconsistencies (e.g., spacing, casing, null values)
 6. I made sure all the columns I added are written SQL friendly 
@@ -235,12 +235,10 @@ ORDER BY roi ASC;
 ```
 Answer: This query identifies low-budget movies that performed poorly financially. It allows for the analysis of films that underperformed, which may reveal lessons about the challenges faced by low-budget productions and the importance of careful financial planning.
 
-
 ## Tableau
 I also made a Tableau dashboard after writing the SQL queries to showcase the results using visuals
 
 [Link to Tableau]
-
 
 ## Key Takeaways
 1. A24's highest ROI films tend to be original, low-budget, and genre-specific (especially horror and psychological thrillers).
