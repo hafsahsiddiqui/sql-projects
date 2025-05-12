@@ -40,17 +40,22 @@ LIMIT 10;
 
 Answer: This query identifies the top 10 movies that generated the highest return on investment (ROI) relative to their budget. By calculating the ROI percentage (roi * 100), it ranks movies based on the efficiency of their budget spend. The result helps identify which films achieved the highest profitability, providing insights into the most financially successful movies.
 
-
-b. Avg Box Office Based on Year
-
+b. Average ROI by Budget Group
 ```
-SELECT year, AVG(box_office) AS avg_box_office
-FROM a24_movies
-GROUP BY year
-ORDER BY year DESC;
+SELECT
+  CASE 
+    WHEN budget < 1000000 THEN 'Under $1M'
+    WHEN budget < 5000000 THEN '$1M–$5M'
+    WHEN budget < 10000000 THEN '$5M–$10M'
+    ELSE 'Over $10M'
+  END AS budget_group,
+  AVG(roi) AS avg_roi
+FROM films
+WHERE budget > 0
+GROUP BY budget_group;
 ```
 
-Answer: For the average box office revenue based on the year, you can calculate this by grouping the movies by the year of release and averaging the box office revenue for each year. This helps identify trends over time and gives you insights into how box office performance has evolved.
+Answer: This query reveals which budget levels give A24 the best returns on investment. This informs budgeting strategies—whether to keep leaning into micro-budget indies or gradually scale up to mid-range features. If returns drop with bigger budgets, A24 can remain focused on lean, creative storytelling.
 
 
 ### ⭐ 2. Star & Director Impact
@@ -62,6 +67,7 @@ SELECT star_attached, AVG(roi) AS avg_roi, COUNT(*) AS film_count
 FROM a24_movies
 GROUP BY star_attached;
 ```
+Answer: Helps determine whether having a well-known actor actually pays off financially. If ROI is higher without stars, it suggests A24’s audience is more drawn to storytelling or tone than celebrity. That’s a key insight for staying cost-efficient while building a cult following.
 
 
 b. Performance by Director Experience
@@ -71,19 +77,7 @@ SELECT director_experience, AVG(roi) AS avg_roi, AVG(IMDb) AS avg_imdb, COUNT(*)
 FROM a24_movies
 GROUP BY director_experience;
 ```
-
-c. Which directors have the highest average box office earnings?
-
-```
-SELECT directed_by, 
-       AVG(box_office) AS avg_box_office
-FROM movies
-WHERE box_office IS NOT NULL
-GROUP BY directed_by
-ORDER BY avg_box_office DESC
-LIMIT 10;
-```
-Answer:
+Answer: Analyzes whether new or veteran directors perform better both commercially and critically. A24 often champions emerging voices—this backs up whether that’s working financially or if seasoned filmmakers deliver more consistent success.
 
 
 ### 🎭 3. Genre & Story Type
@@ -130,6 +124,14 @@ ORDER BY count DESC;
 ```
 Answer: This query groups films by both genre and setting, providing a count of how many films fall into each combination. This gives insight into which genre-settings are most popular or common, helping to identify trends in thematic and environmental choices for A24 films.
 
+e. Success by Target Group
+```
+SELECT target_age_group, AVG(roi) AS avg_roi
+FROM films
+GROUP BY target_age_group;
+```
+Answer: Reveals which age demographics are most profitable. This helps A24 tailor content and marketing—for example, focusing more on Gen Z stories if that audience drives the highest ROI.
+
 ### 🧠 4. Critical Reception 
 a. Top Films by Critics-Audience Gap
 ```
@@ -140,7 +142,6 @@ LIMIT 10;
 ```
 
 Answer: This query identifies films with the largest gap between audience and critic scores, which might highlight movies with polarizing reception. These films may have achieved cult status or unusual success on streaming platforms, which could be relevant for understanding long-term audience appeal versus immediate critical success.
-
 
 b. Correlation Proxy: Critics vs ROI
 
@@ -165,7 +166,7 @@ LIMIT 10;
 Answer: This query retrieves the top 10 movies with the highest IMDb ratings. This allows you to quickly identify the films that have the strongest critical reception, which may indicate higher production quality, broader appeal, or specific genre advantages.
 
 
-### Movie Count by Rotten Tomatoes Rating
+d. Movie Count by Rotten Tomatoes Rating
 
 ```
 SELECT CASE 
@@ -185,22 +186,18 @@ Answer:
 
 ### 🗓️ 5. Long-Term Trends
 
-a. Movies per Year
-```
-SELECT year, COUNT(*) AS films_released
-FROM a24_movies
-GROUP BY year
-ORDER BY year;
-```
-b. Average ROI per Year
+a. How has the ROI has changed over the year?
+
 ```
 SELECT year, AVG(roi) AS avg_roi
-FROM a24_movies
+FROM films
 GROUP BY year
 ORDER BY year;
 ```
 
-c. How has the average box office revenue changed over the years?
+Answer: Tracks whether A24’s financial performance is improving or declining over time. If ROI is rising, it shows their strategy is getting stronger. If it's falling, it could mean saturation or creative missteps that need correcting.
+
+b. How has the average box office revenue changed over the years?
 ```
 SELECT strftime('%Y', release_date) AS year, 
        AVG(box_office) AS avg_box_office
@@ -210,10 +207,18 @@ GROUP BY year
 ORDER BY year DESC;
 ```
 
-Answer:
+Answer: For the average box office revenue based on the year, you can calculate this by grouping the movies by the year of release and averaging the box office revenue for each year. This helps identify trends over time and gives you insights into how box office performance has evolved.
 
 
-To simulate segmentation manually, you could try:
+c. Number of Films by Genre Over Time
+
+```
+SELECT year, genres, COUNT(*) AS num_films
+FROM films
+GROUP BY year, genres
+ORDER BY year, num_films DESC;
+```
+Answer: Identifies shifts in creative focus—maybe more horror in recent years, or fewer comedies. This shows how A24 adapts to audience trends or tries to shape them.
 
 a. High Budget, High ROI
 ```
@@ -235,6 +240,7 @@ ORDER BY roi ASC;
 ```
 Answer: This query identifies low-budget movies that performed poorly financially. It allows for the analysis of films that underperformed, which may reveal lessons about the challenges faced by low-budget productions and the importance of careful financial planning.
 
+
 ## Tableau
 I also made a Tableau dashboard after writing the SQL queries to showcase the results using visuals
 
@@ -252,7 +258,7 @@ I also made a Tableau dashboard after writing the SQL queries to showcase the re
 ## Reflection
 
 What you'd do differently, or next steps (e.g., predictive modeling, sentiment analysis).
+1. **NULL Values**: One thing I would do differently is not manually add information to each film because normally there is data missing for one of the important features and I want to see how I would navigate that.
 
 What are some problems I faced:
 1. **Calculating Profit**: It was hard to calculate the profit because there are multiple things to consider such as production budget, marketing and distribution costs, theaters' share of box office revenue, internaional vs domestic revenue, and more.
-
