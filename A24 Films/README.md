@@ -38,15 +38,19 @@ ORDER BY roi_percentage DESC
 LIMIT 10;
 ```
 
-Answer:
+Answer: This query identifies the top 10 movies that generated the highest return on investment (ROI) relative to their budget. By calculating the ROI percentage (roi * 100), it ranks movies based on the efficiency of their budget spend. The result helps identify which films achieved the highest profitability, providing insights into the most financially successful movies.
+
 
 b. Avg Box Office Based on Year
 
 ```
-
+SELECT year, AVG(box_office) AS avg_box_office
+FROM a24_movies
+GROUP BY year
+ORDER BY year DESC;
 ```
 
-Answer:
+Answer: For the average box office revenue based on the year, you can calculate this by grouping the movies by the year of release and averaging the box office revenue for each year. This helps identify trends over time and gives you insights into how box office performance has evolved.
 
 
 ### ⭐ 2. Star & Director Impact
@@ -58,6 +62,7 @@ SELECT star_attached, AVG(roi) AS avg_roi, COUNT(*) AS film_count
 FROM a24_movies
 GROUP BY star_attached;
 ```
+
 
 b. Performance by Director Experience
 
@@ -90,12 +95,19 @@ FROM a24_movies
 GROUP BY genres
 ORDER BY avg_imdb DESC;
 ```
+
+Answer: This query examines the average IMDb score for each genre and counts how many films belong to each genre. It helps you understand which genres tend to receive higher critical acclaim (as measured by IMDb ratings), providing insights into the genres that are more likely to perform well with audiences and critics.
+
+
 b. ROI: Original vs Adaptation
 ```
 SELECT original_or_adaptation, AVG(roi) AS avg_roi, COUNT(*) AS count
 FROM a24_movies
 GROUP BY original_or_adaptation;
 ```
+
+Answer: This query compares the average ROI between original films and adaptations. It shows whether original movies or adaptations tend to perform better financially, helping to assess the profitability of creative risk (original content) versus established stories (adaptations).
+
 
  c. Movies by Running Time
 
@@ -105,9 +117,18 @@ FROM movies
 ORDER BY running_time DESC
 LIMIT 10;
 ```
-Answer:
 
-<img width="393" alt="Screenshot 2024-11-20 at 12 02 44 AM" src="https://github.com/user-attachments/assets/79c05be8-ce81-463b-acc5-595a96a22119">
+Answer: This query retrieves the longest films based on their running time. By analyzing the longest movies, you can investigate whether longer films correlate with higher or lower box office performance, helping assess audience preferences for movie length.
+
+
+d. Film Count by Genre and Setting
+```
+SELECT genres, setting, COUNT(*) AS count
+FROM a24_movies
+GROUP BY genres, setting
+ORDER BY count DESC;
+```
+Answer: This query groups films by both genre and setting, providing a count of how many films fall into each combination. This gives insight into which genre-settings are most popular or common, helping to identify trends in thematic and environmental choices for A24 films.
 
 ### 🧠 4. Audience vs Critics
 a. Top Films by Critics-Audience Gap
@@ -117,14 +138,20 @@ FROM a24_movies
 ORDER BY ABS(audience_critics_gap) DESC
 LIMIT 10;
 ```
+
+Answer: This query identifies films with the largest gap between audience and critic scores, which might highlight movies with polarizing reception. These films may have achieved cult status or unusual success on streaming platforms, which could be relevant for understanding long-term audience appeal versus immediate critical success.
+
+
 b. Correlation Proxy: Critics vs ROI
-(Note: This won’t calculate correlation in SQL, but shows comparison)
 
 ```
 SELECT title, RTC, RTA, metacritic, roi
 FROM a24_movies
 ORDER BY roi DESC;
 ```
+
+Answer: This query compares critic scores (Rotten Tomatoes and Metacritic) with ROI, helping to explore if there’s a correlation between critical reception and financial success. While SQL cannot directly calculate correlation, this analysis shows how critics' scores align with box office earnings.
+
 c. What movies have the highest imdb ratings?
 
 ```
@@ -135,9 +162,8 @@ ORDER BY imdb DESC
 LIMIT 10;
 ```
 
-Answer: 
+Answer: This query retrieves the top 10 movies with the highest IMDb ratings. This allows you to quickly identify the films that have the strongest critical reception, which may indicate higher production quality, broader appeal, or specific genre advantages.
 
-<img width="340" alt="Screenshot 2024-11-19 at 11 56 04 PM" src="https://github.com/user-attachments/assets/ac062397-46b9-48b2-b3f0-28fc628aea6e">
 
 ### Movie Count by Rotten Tomatoes Rating
 
@@ -156,9 +182,9 @@ ORDER BY movie_count DESC;
 
 Answer:
 
-<img width="237" alt="Screenshot 2024-11-20 at 12 02 22 AM" src="https://github.com/user-attachments/assets/ca0c7807-e407-4c5b-b4ff-c0d585dc766f">
 
 ### 🗓️ 5. Temporal Trends
+
 a. Movies per Year
 ```
 SELECT year, COUNT(*) AS films_released
@@ -186,17 +212,7 @@ ORDER BY year DESC;
 
 Answer:
 
-<img width="218" alt="Screenshot 2024-11-20 at 2 35 34 PM" src="https://github.com/user-attachments/assets/224eb70c-4cb6-48b1-a28d-603f33e0c3dc">
 
-### 🌍 6. Genre and Setting Trends
-
-a. Film Count by Genre and Setting
-```
-SELECT genres, setting, COUNT(*) AS count
-FROM a24_movies
-GROUP BY genres, setting
-ORDER BY count DESC;
-```
 
 ### 🧩 7. Simulated Cluster Segments (Proxy)
 To simulate segmentation manually, you could try:
@@ -208,6 +224,9 @@ FROM a24_movies
 WHERE budget > 5000000 AND roi > 3
 ORDER BY roi DESC;
 ```
+Answer: This query identifies movies that are both high-budget and have high ROI. It helps isolate successful movies that had a significant financial investment and performed exceptionally well, allowing you to explore the characteristics of films that achieve large financial returns.
+
+
 
 b. Low Budget, Low ROI
 
@@ -217,6 +236,7 @@ FROM a24_movies
 WHERE budget < 1000000 AND roi < 1
 ORDER BY roi ASC;
 ```
+Answer: This query identifies low-budget movies that performed poorly financially. It allows for the analysis of films that underperformed, which may reveal lessons about the challenges faced by low-budget productions and the importance of careful financial planning.
 
 
 ## Tableau
