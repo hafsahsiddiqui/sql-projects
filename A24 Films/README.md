@@ -169,19 +169,27 @@ Answer: This query retrieves the top 10 movies with the highest IMDb ratings. Th
 d. Movie Count by Rotten Tomatoes Rating
 
 ```
-SELECT CASE 
-           WHEN rotten_tomatoes BETWEEN 0 AND 59 THEN '0-59'
-           WHEN rotten_tomatoes BETWEEN 60 AND 79 THEN '60-79'
-           WHEN rotten_tomatoes BETWEEN 80 AND 100 THEN '80-100'
-           ELSE 'No Rating'
-       END AS rating_range,
-       COUNT(title) AS movie_count
-FROM movies
+SELECT 
+  CASE 
+    WHEN RTC BETWEEN 0 AND 59 THEN '0–59 (Rotten)'
+    WHEN RTC BETWEEN 60 AND 79 THEN '60–79 (Fresh)'
+    WHEN RTC BETWEEN 80 AND 100 THEN '80–100 (Certified Fresh)'
+    ELSE 'No Rating'
+  END AS rating_range,
+  COUNT(*) AS movie_count
+FROM films
 GROUP BY rating_range
 ORDER BY movie_count DESC;
 ```
 
-Answer:
+Answer: Using your RTC column, this query categorizes A24’s films into critical reception bands. It helps assess:
+1. How often A24 earns critical acclaim (80–100).
+2. Where most of their films land (solidly fresh or middling)
+3. Whether low-rated outliers exist, suggesting creative or marketing missteps.
+
+This kind of snapshot helps A24 understand how well it’s living up to its brand promise of prestige and quality filmmaking—a key factor in long-term audience loyalty and award potential.
+
+
 
 
 ### 🗓️ 5. Long-Term Trends
