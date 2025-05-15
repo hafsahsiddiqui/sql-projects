@@ -270,3 +270,4 @@ What you'd do differently, or next steps (e.g., predictive modeling, sentiment a
 
 What are some problems I faced:
 1. **Calculating Profit**: It was hard to calculate the profit because there are multiple things to consider such as production budget, marketing and distribution costs, theaters' share of box office revenue, internaional vs domestic revenue, and more.
+2. **Multiple Output**: There are films with multiple genres and films or there would be a film where there are two directors working on it and one of them is newbie and the other is experienced.
