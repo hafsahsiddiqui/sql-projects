@@ -181,7 +181,7 @@ LIMIT 10;
 
 Description: Ranks the highest-rated A24 films according to IMDb (a form of critical acclaim)
 
-### 🗓️ 5. Long-Term Trends
+### 📈 5. Long-Term Trends
 
 a. How has the ROI has changed over the year?
 
