@@ -218,10 +218,24 @@ Description: Highlights genre production trends such as horror films increasing 
 
 ## 📊 Tableau
 
-After importing the data from Excel into MySQL and writing exploratory and targeted queries, I decided to include some visualizations to make my analysis more clear. Instead of creating charts for every query, I focused the dashboard on the most meaningful and decision-driving metrics: ROI performance, genre trends, budget efficiency, and creative team impact.
+After performing the SQL analysis, I imported the dataset into Tableau to create a dashboard that brings the insights to life. Instead of visualizing every query, I focused on the most impactful metrics and trends to help decision-makers quickly understand A24’s performance and strategic opportunities.
 
+Dashboard Highlights:
+- ROI Performance: Showcases returns on investment across different budget tiers, star-attached projects, and varying levels of director experience — revealing which types of films deliver the strongest profitability.
+- Genre Trends: Tracks genre popularity and average critical reception over time, illustrating how A24’s creative direction aligns with audience preferences and critical acclaim.
+- Budget Efficiency: Compares ROI across budget brackets to inform decisions on allocating resources between micro-budget indie films and higher-budget productions.
+- Creative Team Impact: Examines the financial and critical contributions of star power and director experience, providing actionable insights for talent strategy.
 
-[Tableau]()
+Additional Features Included in the Dashboard:
+- A short summary of A24’s Best Picture wins and Oscar nominations to show critical recognition.
+- A small image that shows a glimpse into A24 film catalog
+- A personalized section highlighting movies.
+- Link to A24 Website
+
+🔗 [Link to the full dashboard](https://public.tableau.com/app/profile/hafsah.siddiqui/viz/A24_Films/Dashboard)
+
+![Dashboard](https://github.com/user-attachments/assets/72d17d01-2a6e-48d7-a526-b6ba795edb28)
+
 
 ## Key Takeaways
 1. A24's highest ROI films tend to be original, low-budget, and genre-specific (especially horror and psychological thrillers).
