@@ -58,6 +58,24 @@ GROUP BY budget_group;
 
 Description: Reveals which budget levels give A24 the best returns on investment. This informs whether to lean into micro-budget indies or gradually scale up to mid-range features.
 
+c. High Budget, High ROI
+```
+SELECT title, budget, roi, genres
+FROM a24_movies
+WHERE budget > 5000000 AND roi > 3
+ORDER BY roi DESC;
+```
+Description: Shows which high-investment films paid off the most
+
+d. Low Budget, Low ROI
+
+```
+SELECT title, budget, roi, genres
+FROM a24_movies
+WHERE budget < 1000000 AND roi < 1
+ORDER BY roi ASC;
+```
+Description: Identifies low-budget projects that underperformed—useful for avoiding similar pitfalls.
 
 ### ⭐ 2. Star & Director Impact
 
@@ -196,25 +214,6 @@ GROUP BY year, genres
 ORDER BY year, num_films DESC;
 ```
 Description: Highlights genre production trends—e.g., if horror has increased over time
-
-a. High Budget, High ROI
-```
-SELECT title, budget, roi, genres
-FROM a24_movies
-WHERE budget > 5000000 AND roi > 3
-ORDER BY roi DESC;
-```
-Description: Shows which high-investment films paid off the most
-
-b. Low Budget, Low ROI
-
-```
-SELECT title, budget, roi, genres
-FROM a24_movies
-WHERE budget < 1000000 AND roi < 1
-ORDER BY roi ASC;
-```
-Description: Identifies low-budget projects that underperformed—useful for avoiding similar pitfalls.
 
 ## Tableau
 I also made a Tableau dashboard after writing the SQL queries to showcase the results using visuals
