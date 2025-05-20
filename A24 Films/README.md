@@ -239,14 +239,19 @@ After performing the SQL analysis, I imported the dataset into Tableau to create
 
 
 ## Key Takeaways
-1. A24's highest ROI films tend to be original, low-budget, and genre-specific (especially horror and psychological thrillers).
-2. Directors with prior experience generally produce higher box office returns.
-3. Star-attached films show a modest but consistent uplift in performance.
-4. The audience-critic gap can be predictive of cult status or streaming longevity.
-5. There’s upward trend in A24’s box office over time (non-COVID years)
-6. Drama dominates — Over 80 titles fall into this category, but Horror show the highest ROI swings.
-7. A24’s sweet spot: High creative risk, low financial risk (Moonlight, The Witch, Lady Bird).
+1. A24’s box office revenue has generally increased over time (non-COVID years), but ROI has fluctuated.
+2. Bigger budgets don’t always lead to better returns.
+3. Horror films deliver consistently strong ROI for A24, but Comedies tend to be riskier with lower average ROI.
+4. Original stories outperform adaptations in ROI.
+5. Films without A-list actors tend to have higher ROI.
+6. Top-performing films often come from the horror and drama genres.
+7. Movies with budgets under $1 million yield the highest average ROI.
+8. Low-budget indie films offer the best financial return.
+9. Emerging directors can rival or outperform veterans in both ROI and critical reception.
+10. Prioritizing originality and fresh talent pays off creatively and financially.
 
+A24's highest ROI films tend to be original, low-budget, and genre-specific (especially horror and drama)
+    
 ## Reflection
 
 What you'd do differently, or next steps:
