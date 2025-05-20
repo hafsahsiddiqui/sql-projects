@@ -2,26 +2,27 @@
 
 ## Project Overview
 
-I enjoy watching movies. I started watching A24 films more recently after downloading Letterboxd and wanted to know more about how A24 is doing. Therefore, I decided to use a dataset that allows me to quickly explore, analyze, and gain insights about the various aspects of the A24 films to better understand studio's strategies. 
+I have always enjoyed watching movies, and after joining Letterboxd, I started watching A24 films and wanted to know more about how A24 is doing. Therefore, I decided to put together a project that allows me to explore, analyze, and gain insights about the various aspects of the A24 films to better understand the studio's strategies. 
 
 **Goal:** To explore the performance, trends, and key success factors behind A24 films by analyzing their financial returns, critical reception, and production patterns using SQL, Microsoft Excel, and Tableau.
 
 **Tools Used:**
-1. SQL (SQLite/PostgreSQL/MySQL) for querying and analysis
-2. Microsoft Excel for data cleaning and extended analysis
-3. Tableau for visualization
+1. Microsoft Excel for data cleaning
+2. SQL for querying and analysis
+4. Tableau for visualization
 
 ## Background
 
-When I began this project, I discovered a public [dataset](https://www.kaggle.com/datasets/sebastiansuliborski/a24-studio-movies-dataset) on A24 films on Kaggle. The dataset was scraped from [Wikipedia](https://en.wikipedia.org/wiki/List_of_A24_films) and then modified and cleaned. While it served as a helpful foundation, it was outdated. To improve the accuracy and depth of my analysis, I manually updated the dataset by adding all A24 film releases from 2023 to 2025, including key details such as release dates, directors, genres, and box office figures. Additionally, I performed data cleaning by removing duplicates, standardizing formats, and dropping irrelevant or inconsistent columns to ensure a cleaner, more analysis-ready dataset.
+When I first started this project, I discovered a public [dataset](https://www.kaggle.com/datasets/sebastiansuliborski/a24-studio-movies-dataset) on A24 films on Kaggle. The dataset was scraped from [Wikipedia](https://en.wikipedia.org/wiki/List_of_A24_films) and then modified and cleaned. While it served as a helpful foundation, it was outdated. To improve the accuracy and depth of my analysis, I manually updated the dataset by adding all A24 film releases from 2023 to 2025, including key details such as release dates, directors, genres, and box office figures. Additionally, I performed data cleaning by removing duplicates, standardizing formats, and dropping irrelevant or inconsistent columns to ensure a cleaner, more analysis-ready dataset.
 
 **Key Data Cleaning and Prep:**
-1. Removed duplicates based on the movie_title column to ensure data integrity
-2. I manually added 2023-2025 missing films and data, including release date, directors, box office data, and more
-3. I added some columns so the dataset is now title, running_time, directed_by, genres, original_or_adaptation, target_age_group, budget, box_office, roi, year, RTC, RTA, audience_critics_gap, metacritic, IMDb, setting, star_attached, director_experience, and more to give a better analysis on what people tend to like more
-4. I deleted columns that I didn't need such as “Music by”, “Screenplay by”, “Based on”, “Edited By”, “Cinematography” and “Written by”
-5. Standardized column formats and corrected inconsistencies (e.g., spacing, casing, null values)
-6. I made sure all the columns I added are written SQL friendly 
+1. Renamed columns (example: changed "movie_title" to just "title")
+2. Removed duplicates based on the title column to avoid repeated entries and insure data integrity
+3. Manually added 2023-2025 films and data, including release date, directors, box office data, and more
+4. Expanded the dataset to include new columns such as original_or_adaptation, target_age_group, roi, audience_critics_gap, star_attached, director_experience, and more
+5. Deleted columns that I didn't need such as “Music by”, “Screenplay by”, “Based on”, “Edited By”, “Cinematography” and “Written by”
+6. Standardized column formats and corrected inconsistencies (example: spacing, casing, null values)
+7. I made sure all the columns I added are written SQL friendly 
 
 [View Updated Dataset](https://docs.google.com/spreadsheets/d/19XDTzVPtD-lCmuN4hJW1MTJ2pu0ymlAF54sYuPQ7vqo/edit?usp=sharing)
 
@@ -29,7 +30,7 @@ When I began this project, I discovered a public [dataset](https://www.kaggle.co
 
 ### 💵 1. Box Office Analysis
 
-a. Which movies had the biggest financial success relative to their budget?
+a. Which movies had the biggest financial success relative to their budget?  (Top 10 ROI Return) 
 
 ```
 SELECT title, budget, box_office, roi * 100 AS roi_percentage
