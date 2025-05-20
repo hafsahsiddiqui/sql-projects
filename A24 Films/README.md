@@ -216,10 +216,12 @@ ORDER BY year, num_films DESC;
 ```
 Description: Highlights genre production trends such as horror films increasing over time
 
-## Tableau
-I also made a Tableau dashboard after writing the SQL queries to showcase the results using visuals
+## 📊 Tableau
 
-[Link to Tableau]
+After importing the data from Excel into MySQL and writing exploratory and targeted queries, I decided to include some visualizations to make my analysis more clear. Instead of creating charts for every query, I focused the dashboard on the most meaningful and decision-driving metrics: ROI performance, genre trends, budget efficiency, and creative team impact.
+
+
+[Tableau]()
 
 ## Key Takeaways
 1. A24's highest ROI films tend to be original, low-budget, and genre-specific (especially horror and psychological thrillers).
