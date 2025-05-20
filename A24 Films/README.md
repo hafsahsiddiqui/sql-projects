@@ -26,6 +26,7 @@ When I first started this project, I discovered a public [dataset](https://www.k
 
 [View Updated Dataset](https://docs.google.com/spreadsheets/d/19XDTzVPtD-lCmuN4hJW1MTJ2pu0ymlAF54sYuPQ7vqo/edit?usp=sharing)
 
+
 ## SQL Queries + Description
 
 ### 💵 1. Box Office Analysis
