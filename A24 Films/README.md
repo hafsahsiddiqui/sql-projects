@@ -220,17 +220,19 @@ Description: Highlights genre production trends such as horror films increasing 
 
 After performing the SQL analysis, I imported the dataset into Tableau to create a dashboard that brings the insights to life. Instead of visualizing every query, I focused on the most impactful metrics and trends to help decision-makers quickly understand A24’s performance and strategic opportunities.
 
-Dashboard Highlights:
-- ROI Performance: Showcases returns on investment across different budget tiers, star-attached projects, and varying levels of director experience — revealing which types of films deliver the strongest profitability.
-- Genre Trends: Tracks genre popularity and average critical reception over time, illustrating how A24’s creative direction aligns with audience preferences and critical acclaim.
-- Budget Efficiency: Compares ROI across budget brackets to inform decisions on allocating resources between micro-budget indie films and higher-budget productions.
-- Creative Team Impact: Examines the financial and critical contributions of star power and director experience, providing actionable insights for talent strategy.
+**Dashboard Highlights:**
+- ROI Performance: showcases ROI across budget categories, star-attached films, and director experience levels, highlighting which projects deliver the highest profitability.
+- Genre & Story Type: examines how different genres and story origins (original vs. adaptation) perform financially and critically, revealing audience preferences and creative trends.
+- Star & Director Impact: analyzes the influence of star presence and director experience on both box office returns and critical reception
+- Critical Reception: visualizes critic and audience ratings, spotlighting films with notable disparities and exploring correlations between acclaim and financial performance.
 
-Additional Features Included in the Dashboard:
-- A short summary of A24’s Best Picture wins and Oscar nominations to show critical recognition.
-- A small image that shows a glimpse into A24 film catalog
-- A personalized section highlighting movies.
-- Link to A24 Website
+**Additional Features Included in the Dashboard:**
+- Films I have watched so far: A straightforward list of A24 movies I’ve personally watched, providing a personal touch to the analysis.
+- A24 Background:
+  - A brief description of A24’s origins and mission to set the context.
+  - A short summary of A24’s Best Picture wins and Oscar nominations highlighting their critical recognition.
+  - A small image offering a glimpse into the A24 film catalog.
+  - A link to the official A24 website for further exploration.
 
 🔗 [Link to the full dashboard](https://public.tableau.com/app/profile/hafsah.siddiqui/viz/A24_Films/Dashboard)
 
