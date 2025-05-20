@@ -26,7 +26,7 @@ When I first started this project, I discovered a public [dataset](https://www.k
 
 [View Updated Dataset](https://docs.google.com/spreadsheets/d/19XDTzVPtD-lCmuN4hJW1MTJ2pu0ymlAF54sYuPQ7vqo/edit?usp=sharing)
 
-## SQL Queries + Description on what it does
+## SQL Queries + Description
 
 ### 💵 1. Box Office Analysis
 
@@ -213,7 +213,7 @@ FROM a24_movies
 GROUP BY year, genres
 ORDER BY year, num_films DESC;
 ```
-Description: Highlights genre production trends—e.g., if horror has increased over time
+Description: Highlights genre production trends such as horror films increasing over time
 
 ## Tableau
 I also made a Tableau dashboard after writing the SQL queries to showcase the results using visuals
