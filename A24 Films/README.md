@@ -224,9 +224,8 @@ After performing the SQL analysis, I imported the dataset into Tableau to create
 - ROI Performance: showcases ROI across budget categories, star-attached films, and director experience levels, highlighting which projects deliver the highest profitability.
 - Genre & Story Type: examines how different genres and story origins (original vs. adaptation) perform financially and critically, revealing audience preferences and creative trends.
 - Star & Director Impact: analyzes the influence of star presence and director experience on both box office returns and critical reception
-- Critical Reception: visualizes critic and audience ratings, spotlighting films with notable disparities and exploring correlations between acclaim and financial performance.
-
-**Additional Features Included in the Dashboard:**
+  
+**Additional features Included in the Dashboard:**
 - Films I have watched so far: A straightforward list of A24 movies I’ve personally watched, providing a personal touch to the analysis.
 - A24 Background:
   - A brief description of A24’s origins and mission to set the context.
@@ -244,15 +243,18 @@ After performing the SQL analysis, I imported the dataset into Tableau to create
 2. Directors with prior experience generally produce higher box office returns.
 3. Star-attached films show a modest but consistent uplift in performance.
 4. The audience-critic gap can be predictive of cult status or streaming longevity.
-5. There’s a clear upward trend in A24’s critical reception and box office over time (pre-pandemic).
-6. Drama dominates — Over 80 titles fall into this category, but Horror and Coming-of-Age show the highest ROI swings.
+5. There’s upward trend in A24’s box office over time (non-COVID years)
+6. Drama dominates — Over 80 titles fall into this category, but Horror show the highest ROI swings.
 7. A24’s sweet spot: High creative risk, low financial risk (Moonlight, The Witch, Lady Bird).
 
 ## Reflection
 
-What you'd do differently, or next steps (e.g., predictive modeling, sentiment analysis).
-1. **NULL Values**: One thing I would do differently is not manually add information to each film because normally there is data missing for one of the important features and I want to see how I would navigate that.
+What you'd do differently, or next steps:
+1. **Handling Missing Data (NULL Values)**: one thing I would do differently is not manually adding information for each film because usually there’s missing data for important features, and there wouldn’t be enough time to update every column. I want to explore ways to handle missing data more efficiently.
+2. **Expand on Analysis**: I want to add more visualizations that show deeper insights into critical reception, like highlighting movies where critics and audience opinions differ a lot or comparing critic acclaim directly with financial performance.
+3. **Improve Data Formatting and Presentation**:I would keep financial figures like ROI, Box Office, and Budget in their original units (e.g., millions) rather than decimals, to make the data more intuitive and accessible—especially for stakeholders or collaborators reviewing the visualizations.
 
 What are some problems I faced:
 1. **Calculating Profit**: It was hard to calculate the profit because there are multiple things to consider such as production budget, marketing and distribution costs, theaters' share of box office revenue, internaional vs domestic revenue, and more.
-2. **Multiple Output**: There are films with multiple genres and films or there would be a film where there are two directors working on it and one of them is newbie and the other is experienced.
+2. **Multiple Output**: There are films with multiple genres and films or there would be a film where there are two directors working on it and one of them is newbie and the other is experienced. I struggled to figure out if I should just do the first main genre of each films or include both for my visualization even though it's the same film. I decided to go with the first one even though I feel like it's not 100% accurate on what kind of movie it's. For example, Everything Everywhere All At Once can be Action, Sci-Fi, Fantasy, Drama, and more.
+3. **Data Formatting**: I converted ROI, Box Office, and Budget values into decimal form where 1.0 represents 1 million, thinking it would make the data easier to work with. However, when creating the Tableau visualizations, I realized it would have been clearer to keep the numbers in full amounts (like 1 million) to avoid confusion for others reviewing the data.
