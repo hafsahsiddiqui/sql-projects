@@ -84,7 +84,7 @@ Answer: Analyzes whether new or veteran directors perform better both commercial
 
 a. IMDb by Genre
 ```
-SELECT genres, AVG(IMDb) AS avg_imdb, COUNT(*) AS count
+SELECT genres, AVG(IMDb) AS avg_imdb, COUNT(*) AS film_count
 FROM a24_movies
 GROUP BY genres
 ORDER BY avg_imdb DESC;
@@ -94,7 +94,7 @@ Answer: Reveals which genres consistently perform best with audiences
 
 b. ROI: Original vs Adaptation
 ```
-SELECT original_or_adaptation, AVG(roi) AS avg_roi, COUNT(*) AS count
+SELECT original_or_adaptation, AVG(roi) AS avg_roi, COUNT(*) AS film_count
 FROM a24_movies
 GROUP BY original_or_adaptation;
 ```
@@ -115,7 +115,7 @@ Answer: This query retrieves the longest films based on their running time and t
 
 d. Film Count by Genre and Setting
 ```
-SELECT genres, setting, COUNT(*) AS count
+SELECT genres, setting, COUNT(*) AS film_count
 FROM a24_movies
 GROUP BY genres, setting
 ORDER BY count DESC;
@@ -178,7 +178,7 @@ Answer: Tracks whether A24’s financial performance is improving, plateauing, o
 
 b. How has the average box office revenue changed over the years?
 ```
-SELECT YEAR(release_date) AS year, AVG(box_office) AS avg_box_office
+SELECT year, AVG(box_office) AS avg_box_office
 FROM a24_movies
 WHERE box_office IS NOT NULL
 GROUP BY YEAR(release_date)
@@ -190,7 +190,7 @@ Answer: Measures changes in average revenue year-over-year—can reflect marketi
 c. Number of Films by Genre Over Time
 
 ```
-SELECT year, genres, COUNT(*) AS num_films
+SELECT year, genres, COUNT(*) AS film_count
 FROM a24_movies
 GROUP BY year, genres
 ORDER BY year, num_films DESC;
