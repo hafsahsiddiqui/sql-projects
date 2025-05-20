@@ -26,7 +26,7 @@ When I first started this project, I discovered a public [dataset](https://www.k
 
 [View Updated Dataset](https://docs.google.com/spreadsheets/d/19XDTzVPtD-lCmuN4hJW1MTJ2pu0ymlAF54sYuPQ7vqo/edit?usp=sharing)
 
-## SQL Queries + Answers
+## SQL Queries + Description on what it does
 
 ### 💵 1. Box Office Analysis
 
@@ -39,7 +39,7 @@ ORDER BY roi_percentage DESC
 LIMIT 10;
 ```
 
-Answer: This query identifies the top 10 movies that generated the highest return on investment (ROI) relative to their budget. The result helps identify which films achieved the highest profitability, providing insights into the most financially successful movies.
+Description: Identifies the top 10 movies that generated the highest return on investment (ROI) relative to their budget. The result helps identify which films achieved the highest profitability.
 
 b. Average ROI by Budget Group
 ```
@@ -56,7 +56,7 @@ WHERE budget > 0
 GROUP BY budget_group;
 ```
 
-Answer: This query reveals which budget levels give A24 the best returns on investment. This informs budgeting strategies—whether to keep leaning into micro-budget indies or gradually scale up to mid-range features.
+Description: Reveals which budget levels give A24 the best returns on investment. This informs whether to lean into micro-budget indies or gradually scale up to mid-range features.
 
 
 ### ⭐ 2. Star & Director Impact
@@ -68,7 +68,7 @@ SELECT star_attached, AVG(roi) AS avg_roi, COUNT(*) AS film_count
 FROM a24_movies
 GROUP BY star_attached;
 ```
-Answer: Helps determine whether having a well-known actor actually pays off financially.
+Description: Helps determine whether having a well-known actor actually pays off financially.
 
 b. Performance by Director Experience
 
@@ -77,7 +77,7 @@ SELECT director_experience, AVG(roi) AS avg_roi, AVG(IMDb) AS avg_imdb, COUNT(*)
 FROM a24_movies
 GROUP BY director_experience;
 ```
-Answer: Analyzes whether new or veteran directors perform better both commercially and critically.
+Description: Analyzes whether new or veteran directors perform better both commercially and critically.
 
 
 ### 🎭 3. Genre & Story Type
@@ -90,7 +90,7 @@ GROUP BY genres
 ORDER BY avg_imdb DESC;
 ```
 
-Answer: Reveals which genres consistently perform best with audiences
+Description: Reveals which genres consistently perform best with audiences
 
 b. ROI: Original vs Adaptation
 ```
@@ -99,7 +99,7 @@ FROM a24_movies
 GROUP BY original_or_adaptation;
 ```
 
-Answer: This query compares creative risks (originals) to familiar stories (adaptations) in terms of profitability
+Description: This query compares creative risks (originals) to familiar stories (adaptations) in terms of profitability
 
 
  c. Movies by Running Time
@@ -111,7 +111,7 @@ ORDER BY running_time DESC
 LIMIT 10;
 ```
 
-Answer: This query retrieves the longest films based on their running time and their profitability
+Description: This query retrieves the longest films based on their running time and their profitability
 
 d. Film Count by Genre and Setting
 ```
@@ -120,7 +120,7 @@ FROM a24_movies
 GROUP BY genres, setting
 ORDER BY count DESC;
 ```
-Answer: This query groups films by both genre and setting, providing a count of how many films fall into each combination. This gives insight into which genre-settings are most popular.
+Description: This query groups films by both genre and setting, providing a count of how many films fall into each combination. This gives insight into which genre-settings are most popular.
 
 e. Success by Target Group
 ```
@@ -128,7 +128,7 @@ SELECT target_age_group, AVG(roi) AS avg_roi
 FROM a24_movies
 GROUP BY target_age_group;
 ```
-Answer: This helps A24 tailor content and marketing—for example, focusing more on Gen Z stories if that audience drives the highest ROI.
+Description: This helps A24 tailor content and marketing—for example, focusing more on Gen Z stories if that audience drives the highest ROI.
 
 ### 🧠 4. Critical Reception 
 a. Top Films by Critics-Audience Gap
@@ -139,7 +139,7 @@ ORDER BY ABS(audience_critics_gap) DESC
 LIMIT 10;
 ```
 
-Answer: Spotlights polarizing films with a big disconnect between critics and audience
+Description: Spotlights polarizing films with a big disconnect between critics and audience
 
 b. Correlation Proxy: Critics vs ROI
 
@@ -149,7 +149,7 @@ FROM a24_movies
 ORDER BY roi DESC;
 ```
 
-Answer: Helps explore potential patterns between critical acclaim and financial success
+Description: Helps explore potential patterns between critical acclaim and financial success
 
 c. What movies have the highest imdb ratings?
 
@@ -161,7 +161,7 @@ ORDER BY imdb DESC
 LIMIT 10;
 ```
 
-Answer: Ranks the highest-rated A24 films according to IMDb (a form of critical acclaim)
+Description: Ranks the highest-rated A24 films according to IMDb (a form of critical acclaim)
 
 ### 🗓️ 5. Long-Term Trends
 
@@ -174,7 +174,7 @@ GROUP BY year
 ORDER BY year;
 ```
 
-Answer: Tracks whether A24’s financial performance is improving, plateauing, or declining over time
+Description: Tracks whether A24’s financial performance is improving, plateauing, or declining over time
 
 b. How has the average box office revenue changed over the years?
 ```
@@ -185,7 +185,7 @@ GROUP BY YEAR(release_date)
 ORDER BY year DESC;
 ```
 
-Answer: Measures changes in average revenue year-over-year—can reflect marketing, trends, or shifts in quality.
+Description: Measures changes in average revenue year-over-year—can reflect marketing, trends, or shifts in quality.
 
 c. Number of Films by Genre Over Time
 
@@ -195,7 +195,7 @@ FROM a24_movies
 GROUP BY year, genres
 ORDER BY year, num_films DESC;
 ```
-Answer: Highlights genre production trends—e.g., if horror has increased over time
+Description: Highlights genre production trends—e.g., if horror has increased over time
 
 a. High Budget, High ROI
 ```
@@ -204,7 +204,7 @@ FROM a24_movies
 WHERE budget > 5000000 AND roi > 3
 ORDER BY roi DESC;
 ```
-Answer: Shows which high-investment films paid off the most
+Description: Shows which high-investment films paid off the most
 
 b. Low Budget, Low ROI
 
@@ -214,7 +214,7 @@ FROM a24_movies
 WHERE budget < 1000000 AND roi < 1
 ORDER BY roi ASC;
 ```
-Answer: Identifies low-budget projects that underperformed—useful for avoiding similar pitfalls.
+Description: Identifies low-budget projects that underperformed—useful for avoiding similar pitfalls.
 
 ## Tableau
 I also made a Tableau dashboard after writing the SQL queries to showcase the results using visuals
