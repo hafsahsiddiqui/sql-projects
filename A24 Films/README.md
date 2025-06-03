@@ -46,9 +46,9 @@ b. Average ROI by Budget Group
 ```
 SELECT
   CASE 
-    WHEN budget < 1000000 THEN 'Under $1M'
-    WHEN budget < 5000000 THEN '$1M–$5M'
-    WHEN budget < 10000000 THEN '$5M–$10M'
+    WHEN budget < 1 THEN 'Under $1M'
+    WHEN budget < 5 THEN '$1M–$5M'
+    WHEN budget < 10 THEN '$5M–$10M'
     ELSE 'Over $10M'
   END AS budget_group,
   AVG(roi) AS avg_roi
@@ -63,7 +63,7 @@ c. High Budget, High ROI
 ```
 SELECT title, budget, roi, genres
 FROM a24_movies
-WHERE budget > 5000000 AND roi > 3
+WHERE budget > 5 AND roi > 3
 ORDER BY roi DESC;
 ```
 Description: Shows which high-investment films paid off the most
@@ -73,7 +73,7 @@ d. Low Budget, Low ROI
 ```
 SELECT title, budget, roi, genres
 FROM a24_movies
-WHERE budget < 1000000 AND roi < 1
+WHERE budget < 1 AND roi < 1
 ORDER BY roi ASC;
 ```
 Description: Identifies low-budget projects that underperformed—useful for avoiding similar pitfalls.
