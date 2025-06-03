@@ -218,7 +218,7 @@ Description: Highlights genre production trends such as horror films increasing 
 
 ## 📊 Tableau
 
-After performing the SQL analysis, I imported the dataset into Tableau to create a dashboard that brings the insights to life. Instead of visualizing every query, I focused on the most impactful metrics and trends to help decision-makers quickly understand A24’s performance and strategic opportunities.
+After performing the SQL analysis, I imported the dataset into Tableau to create a dashboard that brings the insights to life. Instead of visualizing every query, I focused on the most impactful metrics and trends to quickly understand A24’s performance and strategic opportunities.
 
 **Dashboard Highlights:**
 - ROI Performance: showcases ROI across budget categories, star-attached films, and director experience levels, highlighting which projects deliver the highest profitability.
@@ -228,7 +228,7 @@ After performing the SQL analysis, I imported the dataset into Tableau to create
 **Additional features Included in the Dashboard:**
 - Films I have watched so far: A straightforward list of A24 movies I’ve personally watched, providing a personal touch to the analysis.
 - A24 Background:
-  - A brief description of A24’s origins and mission to set the context.
+  - A brief description of A24’s origins and mission to set the background on what A24 is.
   - A short summary of A24’s Best Picture wins and Oscar nominations highlighting their critical recognition.
   - A small image offering a glimpse into the A24 film catalog.
   - A link to the official A24 website for further exploration.
