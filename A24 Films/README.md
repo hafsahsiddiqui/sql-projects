@@ -257,7 +257,7 @@ A24's highest ROI films tend to be original, low-budget, and genre-specific (esp
 What I would do differently, or next steps:
 1. **Handling Missing Data (NULL Values)**: one thing I would do differently is not manually adding information for each film because usually there’s missing data for important features, and there wouldn’t be enough time to update every column. I want to explore ways to handle missing data more efficiently.
 2. **Expand on Analysis**: I want to add more visualizations that show deeper insights into critical reception, like highlighting movies where critics and audience opinions differ a lot or comparing critic acclaim directly with financial performance. I would also make the visualizations more interactive.
-3. **Improve Data Formatting and Presentation**:I would keep financial figures like ROI, box office, and budget in their original units (e.g., millions) rather than decimals, to make the data more intuitive and accessible
+3. **Improve Data Formatting and Presentation**:I would keep financial figures like ROI, box office, and budget in their original units (e.g., millions) rather than decimals, to make the data more intuitive and accessible.
 
 What are some problems I faced:
 1. **Calculating Profit**: It was hard to calculate the profit because there are multiple things to consider such as production budget, marketing and distribution costs, theaters' share of box office revenue, internaional vs domestic revenue, and more.
